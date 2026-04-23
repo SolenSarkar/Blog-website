@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+<h1 class="logo"><a href="index.html">MyBlog</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="post.html">Posts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">
+                    <i class="fas fa-moon theme-moon"></i>
+                    <i class="fas fa-sun theme-sun" style="display: none;"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h2 class="hero-title">Welcome to MyBlog</h2>
+                <p class="hero-subtitle">Sharing thoughts on tech, design, and life. Dive into the latest posts.</p>
+            </section>
+
+            <!-- About Section (unchanged) -->
+            <section class="hero">
+                <h1>About Me</h1>
+                <p class="hero-subtitle">Passionate developer sharing knowledge on web technologies.</p>
+            </section>
+
+            <article class="about-content">
+                <div class="profile-card">
+                    <img src="images/profile.jpg" alt="Developer profile photo" class="profile-img">
+                    <div class="profile-info">
+                        <p>Welcome! I'm a front-end developer with 5+ years experience in HTML, CSS, JavaScript, and modern frameworks. This blog is where I document my learning journey, experiments, and tips for fellow developers.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="skills-section">
+                    <h3>What I Write About</h3>
+                    <div class="skills-grid">
+                        <div class="topic-card">
+                            <strong>Web Development</strong>
+                            <p>HTML5, CSS3, JS, React</p>
+                        </div>
+                        <div class="topic-card">
+                            <strong>Design</strong>
+                            <p>UI/UX, Typography, Responsive Layouts</p>
+                        </div>
+                        <div class="topic-card">
+                            <strong>Tools</strong>
+                            <p>VS Code, Git, Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <section class="posts" id="posts-section">
+                <h3>Recent Posts</h3>
+
+                
+                <!-- Search Box moved here for consistency -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search posts by title or content...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div id="no-results" class="no-results" style="display: none;">
+                    <p>No posts found matching your search.</p>
+                </div>
+
+                <!-- Dynamic post-list: populated by JS -->
+                <div class="post-list"></div>
+                
+                <h3>Contact</h3>
+                <p>Have questions? <a href="contact.html">Get in touch</a> or follow me on social media.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2024 @MyBlog. Built with <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

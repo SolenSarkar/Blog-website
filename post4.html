@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ES2025 Features - MyBlog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">MyBlog</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="post.html">Posts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">
+                    <i class="fas fa-moon theme-moon"></i>
+                    <i class="fas fa-sun theme-sun" style="display: none;"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <article class="post-full">
+
+                <img src="images/web-future.jpg" alt="JavaScript ES2025 features" class="post-hero-image">
+                <header class="post-header">
+                    <h2>JavaScript ES2025 Features</h2>
+                    <p class="post-meta">
+                        By <strong>Author Name</strong> |
+                        <time id="post-date">November 1, 2024</time> |
+                        7 min read
+                    </p>
+                </header>
+                <div id="post-content">
+                    <p>JavaScript continues to evolve rapidly with ES2025 bringing exciting new features that will change how we write modern applications.</p>
+                    <h3>Pipeline Operator (|>)</h3>
+                    <p>The long-awaited pipeline operator allows for cleaner, more readable code:</p>
+                    <pre><code>const result = someValue
+  |> parseInt
+  |> multiplyByTwo
+  |> formatResult;</code></pre>
+                    <h3>Improved Error Handling</h3>
+                    <p>New patterns for handling errors make async code more robust:</p>
+                    <ul>
+                        <li>try/catch with async generators</li>
+                        <li>Pattern matching proposals</li>
+                        <li>Better promise rejection handling</li>
+                    </ul>
+                    <blockquote>
+                        <p>"JavaScript's evolution keeps it relevant in an ever-changing web landscape." - Brendan Eich</p>
+                    </blockquote>
+                    <h3>Module Enhancements</h3>
+                    <p>JSON modules and import assertions make data loading more secure and performant across modern bundlers.</p>
+                    <p>These features, combined with better temporal dead zone handling, make ES2025 a significant milestone for JavaScript developers.</p>
+                </div>
+                <footer class="post-footer">
+                    <a href="post.html" class="btn btn-secondary">← Back to Posts</a>
+                    <div class="post-tags">
+                        <span>Tags:</span>
+                        <a href="#">JavaScript</a>
+                        <a href="#">ES2025</a>
+                        <a href="#">Syntax</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2024 MyBlog. Built with <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

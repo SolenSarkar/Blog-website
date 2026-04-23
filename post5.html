@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Animations - MyBlog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">MyBlog</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="post.html">Posts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">
+                    <i class="fas fa-moon theme-moon"></i>
+                    <i class="fas fa-sun theme-sun" style="display: none;"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <article class="post-full">
+                <img src="images/typography.jpg" alt="Modern CSS animations" class="post-hero-image">
+                <header class="post-header">
+                    <h2>Modern CSS Animations</h2>
+                    <p class="post-meta">
+                        By <strong>Author Name</strong> |
+                        <time>October 25, 2024</time> |
+                        9 min read
+                    </p>
+                </header>
+                <div id="post-content">
+                    <p>CSS animations have evolved from simple transitions to sophisticated motion design tools. This guide covers modern techniques for buttery smooth user experiences.</p>
+                    <h3>@property for Smooth Animations</h3>
+                    <p>The new @property rule enables subpixel accuracy and interpolation of custom properties:</p>
+                    <pre><code>@property --my-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000ff;
+}</code></pre>
+                    <h3>Scroll-Driven Animations</h3>
+                    <ul>
+                        <li>animation-timeline: scroll()</li>
+                        <li>Native scroll progress linking</li>
+                        <li>Performance optimized</li>
+                    </ul>
+                    <p>Combine with View Timeline API for viewport-aware effects without JavaScript.</p>
+                    <blockquote>
+                        <p>"Motion shouldn't be an afterthought in design." - Sarah Drasner</p>
+                    </blockquote>
+                    <h3>Advanced Keyframe Control</h3>
+                    <p>Individual transform properties now animate independently, eliminating the need for complex matrix math in many cases.</p>
+                    <p>These advancements make CSS the premier choice for performant, hardware-accelerated animations across the web.</p>
+                </div>
+                <footer class="post-footer">
+                    <a href="post.html" class="btn btn-secondary">← Back to Posts</a>
+                    <div class="post-tags">
+                        <span>Tags:</span>
+                        <a href="#">CSS</a>
+                        <a href="#">Animations</a>
+                        <a href="#">Motion</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2024 MyBlog. Built with <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong>.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
