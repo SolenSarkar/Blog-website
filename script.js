@@ -154,6 +154,9 @@ function filterPosts(e) {
 
 // Animation inits
 function initHeroTitleCycle() {
+  const isHomePage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
+  if (!isHomePage) return;
+
   const heroTitle = document.querySelector('.hero-title');
   if (!heroTitle) return;
 
