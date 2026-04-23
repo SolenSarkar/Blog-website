@@ -125,18 +125,17 @@ function renderPosts(posts, containerSelector) {
   `).join('');
 }
 
-// Enhanced filter: search title + excerpt, re-render
+// Enhanced filter: search title + excerpt across ALL posts, re-render
 function filterPosts(e) {
   const query = e.target.value.toLowerCase().trim();
   const isHomePage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
-  const allPosts = isHomePage ? postsData.slice(0, 3) : postsData;
   
   const filtered = query 
-    ? allPosts.filter(post => 
+    ? postsData.filter(post => 
         post.title.toLowerCase().includes(query) || 
         post.excerpt.toLowerCase().includes(query)
       )
-    : allPosts;
+    : (isHomePage ? postsData.slice(0, 3) : postsData);
   
   renderPosts(filtered, '.post-list');
   
