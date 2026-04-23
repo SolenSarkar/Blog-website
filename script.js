@@ -211,7 +211,12 @@ function initScrollReveals() {
     el.setAttribute('data-reveal', '');
     observer.observe(el);
   });
+  // Observe elements that already have data-reveal in the markup (e.g. contact-info)
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    observer.observe(el);
+  });
 }
+
 
 function initCardTilt() {
   const cards = document.querySelectorAll('.post-card, .topic-card');
