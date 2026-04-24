@@ -128,11 +128,12 @@ function renderPosts(posts, containerSelector) {
 // Enhanced filter: search title + excerpt across ALL posts, re-render
 function filterPosts(e) {
   const query = e.target.value.toLowerCase().trim();
-  const isHomePage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
-  
-  const filtered = query 
-    ? postsData.filter(post => 
-        post.title.toLowerCase().includes(query) || 
+  const path = window.location.pathname;
+  const isHomePage = path === '/' || path.endsWith('/') || path.endsWith('/index.html');
+
+  const filtered = query
+    ? postsData.filter(post =>
+        post.title.toLowerCase().includes(query) ||
         post.excerpt.toLowerCase().includes(query)
       )
     : (isHomePage ? postsData.slice(0, 3) : postsData);
@@ -153,7 +154,8 @@ function filterPosts(e) {
 
 // Animation inits
 function initHeroTitleCycle() {
-  const isHomePage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
+  const path = window.location.pathname;
+  const isHomePage = path === '/' || path.endsWith('/') || path.endsWith('/index.html');
   if (!isHomePage) return;
 
   const heroTitle = document.querySelector('.hero-title');
@@ -305,7 +307,8 @@ function initNavbarScroll() {
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search-input');
   if (searchInput) {
-    const isHomePage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
+    const path = window.location.pathname;
+    const isHomePage = path === '/' || path.endsWith('/') || path.endsWith('/index.html');
     const initialPosts = isHomePage ? postsData.slice(0, 3) : postsData;
     
     searchInput.addEventListener('input', filterPosts);
