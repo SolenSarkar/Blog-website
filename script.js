@@ -126,17 +126,20 @@ function renderPosts(posts, containerSelector) {
 }
 
 // Enhanced filter: search title + excerpt across ALL posts, re-render
-function filterPosts(e) {
-  const query = e.target.value.toLowerCase().trim();
+function filterPosts(query) {
   const path = window.location.pathname;
   const isHomePage = path === '/' || path.endsWith('/') || path.endsWith('/index.html');
 
-  const filtered = query
-    ? postsData.filter(post =>
-        post.title.toLowerCase().includes(query) ||
-        post.excerpt.toLowerCase().includes(query)
-      )
-    : (isHomePage ? postsData.slice(0, 3) : postsData);
+  let filtered;
+  if (typeof query === 'string' && query.trim()) {
+    const q = query.toLowerCase().trim();
+    filtered = postsData.filter(post =>
+      post.title.toLowerCase().includes(q) ||
+      post.excerpt.toLowerCase().includes(q)
+    );
+  } else {
+    filtered = isHomePage ? postsData.slice(0, 3) : postsData;
+  }
   
   renderPosts(filtered, '.post-list');
   
@@ -311,9 +314,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const isHomePage = path === '/' || path.endsWith('/') || path.endsWith('/index.html');
     const initialPosts = isHomePage ? postsData.slice(0, 3) : postsData;
     
-    searchInput.addEventListener('input', filterPosts);
-    // Initial render
-    renderPosts(initialPosts, '.post-list');
+    searchInput.addEventListener('input', (e) => filterPosts(e.target.value));
+    
+    // Handle URL query params (?tag=css or ?category=web-dev) for tag links
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagQuery = urlParams.get('tag') || urlParams.get('category');
+    if (tagQuery) {
+      // Pre-fill search with tag and trigger filter
+      searchInput.value = tagQuery;
+      filterPosts(tagQuery);
+    } else {
+      // Initial render
+      renderPosts(initialPosts, '.post-list');
+    }
   }
   
   // WOW: Init animations
