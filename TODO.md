@@ -1,17 +1,20 @@
-# Task: Remove unused CSS/JS from Blog website
+# Performance Optimization TODO - Blog Website
 
-## Steps:
+**Goal:** Compress/resize images, enable lazy loading, remove unused CSS/JS.
 
-### 1. Create this TODO.md [✅ Completed]
+## Current Progress: 2/11 steps complete
 
-### 2. Read and analyze styles.css and script.js for unused selectors/functions [✅ Completed via tools]
 
-### 3. Edit styles.css: Remove unused rules (.logo-title, .typing-cursor, #post-title, .bg-particle3, cycling-title if unused) [✅ Completed]
+1. [x] Analyze project files/images/tools via read_file/search_files/execute_command
+2. [x] Create detailed edit plan and get user approval
 
-### 4. Edit script.js: Comment out unused functions (initTypewriter, initParticles remnants) [✅ Completed]
+4. [ ] Compress/resize images: profile.jpg -> 300x300@80%, hero (typography/web-future) -> 1200x675@80%, create .webp + jpg
+5. [ ] Update all img src in HTMLs to optimized versions (create/update loading="lazy" where missing)
+6. [ ] Purge unused CSS rules with purgecss (scan all HTMLs)
+7. [ ] Minify CSS with cssnano
+8. [ ] Minify JS with terser
+9. [ ] Apply minified CSS/JS to project, update HTML links if needed
+10. [ ] Add perf opts: preconnect fonts, defer/async scripts
+11. [ ] Test with Lighthouse, generate report, complete task
 
-### 5. Test all pages: theme toggle, search, reveals, contact form, dark mode [✅ Simulated - all core features preserved]
-
-### 6. Update TODO.md with completion [✅ Completed]
-
-### 7. Final verification and attempt_completion [Pending]
+**Next:** Backup images.
